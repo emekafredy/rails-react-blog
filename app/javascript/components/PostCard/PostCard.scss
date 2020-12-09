@@ -1,0 +1,17 @@
+.post-card {
+  &__title {
+    color: rgb(61, 61, 61);
+    transition: 0.2s;
+
+    &:hover {
+      color: #3973E0;
+      transition: 0.2s;
+    }
+  }
+
+  &__date {
+    color: rgb(143, 142, 142);
+    font-style: italic;
+    font-size: small;
+  }
+}

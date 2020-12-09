@@ -1,0 +1,40 @@
+.nav {
+  padding: 1.3rem;
+  background-color: #3973E0;
+
+  &__brand {
+    color: #FFF;
+    font-weight: bolder;
+
+    &:hover {
+      color: #CCC;
+    }
+  }
+
+  &__right { float: right; }
+
+  &__right-link {
+    border-radius: 3px;
+    padding: 0.6rem 1.2rem;
+    margin-right: 1rem;
+
+    &__primary {
+      color: #FFF;
+      background-color:#00d1b2;
+
+      &:hover {
+        color: #FFF;
+        background-color:#00c4a7;
+      }
+    }
+
+    &__light {
+      color: #000;
+      background-color:#ebfffc;
+
+      &:hover {
+        background-color:#defffa;
+      }
+    }
+  }
+}
