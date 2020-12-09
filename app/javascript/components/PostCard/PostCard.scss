@@ -1,4 +1,14 @@
 .post-card {
+  &__name {
+    font-size: 0.8rem;
+    font-weight: bolder;
+  }
+
+  &__username {
+    font-size: 0.7rem;
+    font-style: italic;
+  }
+
   &__title {
     color: rgb(61, 61, 61);
     transition: 0.2s;

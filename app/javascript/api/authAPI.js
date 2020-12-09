@@ -4,9 +4,9 @@ import { resolveBaseUrl } from '.';
 const baseUrl = resolveBaseUrl();
 
 export const registerUserAPI = (signUpData) => {
-  return axios.post(`${baseUrl}/users`, signUpData);
+  return axios.post(`${baseUrl}/auth/register`, signUpData);
 }
 
 export const loginUserAPI = (loginData) => {
-  return axios.get(`${baseUrl}/auth/login`, loginData);
+  return axios.post(`${baseUrl}/auth/login`, loginData);
 }

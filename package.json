@@ -16,6 +16,7 @@
     "react-dom": "^17.0.1",
     "react-moment": "^1.0.0",
     "react-router-dom": "^5.2.0",
+    "react-slideshow-image": "^3.4.2",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

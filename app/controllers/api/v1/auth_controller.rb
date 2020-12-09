@@ -7,7 +7,7 @@ class Api::V1::AuthController < ApplicationController
       token = encode_token(payload)
       render json: { token: token, message: "Welcome back, #{user.username}" }
     else
-      render json: { error: "Login failed! Username or password incorrect" }, status: :not_acceptable
+      render json: { errors: "Login failed! Username or password incorrect" }, status: :not_acceptable
     end
   end
 
@@ -15,7 +15,7 @@ class Api::V1::AuthController < ApplicationController
     if current_user
       render json: current_user
     else
-      render json: { error: "User is not logged in" }
+      render json: { errors: "User is not logged in" }
     end
   end
 end

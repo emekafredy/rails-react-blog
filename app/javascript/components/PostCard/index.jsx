@@ -29,8 +29,8 @@ export const PostCard = ({
               </figure>
             </div>
             <div className="media-content">
-              <p className="title is-6"> { firstName } { lastName }</p>
-              <p className="subtitle is-6">@{ username }</p>
+              <p className="title post-card__name"> { firstName } { lastName }</p>
+              <p className="subtitle post-card__username">@{ username }</p>
             </div>
           </div>
 

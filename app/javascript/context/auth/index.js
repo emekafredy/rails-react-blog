@@ -7,7 +7,7 @@ import {
   setUser, setErrors, startRequest, completeRequest
 } from './AuthActions';
 
-import { registerUserAPI } from '../../api/authAPI';
+import { registerUserAPI, loginUserAPI } from '../../api/authAPI';
 import { setToken } from '../../utils';
 
 export const AuthContext = createContext();
