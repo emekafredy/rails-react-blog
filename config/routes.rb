@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get  '/users/profile',  to: 'users#show'
 
       get    '/posts',             to: 'posts#index'
-      get    '/posts/:id/show',    to: 'posts#show'
+      get    '/posts/:id',         to: 'posts#show'
       put    '/posts/:id/update',  to: 'posts#update'
       delete '/posts/:id/destroy', to: 'posts#destroy'
     end

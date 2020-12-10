@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Moment from 'react-moment';
+import moment from 'moment';
 
 import './PostCard.scss';
 
@@ -10,6 +10,7 @@ export const PostCard = ({
   lastName,
   username,
   title,
+  postId,
   date
 }) => {
   return (
@@ -36,13 +37,11 @@ export const PostCard = ({
 
           <div className="content">
             <strong> 
-              <Link to='/' className="post-card__title"> { title }  </Link>
+              <Link to={`/posts/${postId}`} className="post-card__title"> { title }  </Link>
             </strong>
             <br />
             <small className="post-card__date">
-              <Moment parse="YYYY-MM-DD">
-                  { date }
-              </Moment>
+              { moment(date).format('LL') }
             </small>
           </div>
         </div>

@@ -31,6 +31,7 @@ export const Posts = () => {
                     firstName={ post.first_name }
                     lastName={ post.last_name }
                     username={ post.username }
+                    postId={ post.id }
                   />
                 );
               })
