@@ -17,7 +17,7 @@ class Api::V1::PostsController < ApplicationController
   def show
     @post = set_post
 
-    render json: { message: 'Post retrieved', post: @post, user: @post.user.username }
+    render json: { message: 'Post retrieved', post: @post, user: @post.user.username, category: @post.category.name }
   end
 
   def create

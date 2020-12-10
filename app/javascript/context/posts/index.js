@@ -34,10 +34,10 @@ export const PostsProvider = props => {
     }
   };
 
-  const getPost = async () => {
+  const getPost = async (id) => {
     try {
       dispatch(startRequest());
-      const response = await getPostAPI();
+      const response = await getPostAPI(id);
       const { data } = response;
 
       dispatch(completeRequest());
@@ -53,7 +53,7 @@ export const PostsProvider = props => {
         getPosts: getPosts,
         getPost: getPost,
         posts: state.posts.posts,
-        post: state.post,
+        post: state.post.post,
         loading: state.loading,
       }}
     >
