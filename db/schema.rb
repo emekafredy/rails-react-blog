@@ -23,12 +23,11 @@ ActiveRecord::Schema.define(version: 2020_12_05_233336) do
 
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
     t.string "title"
     t.text "body"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -42,6 +41,5 @@ ActiveRecord::Schema.define(version: 2020_12_05_233336) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
 end

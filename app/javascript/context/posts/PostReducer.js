@@ -1,5 +1,5 @@
 import {
-  SET_POSTS, SET_POST, SET_ERRORS, START_REQUEST, COMPLETE_REQUEST
+  SET_POSTS, SET_POST, SET_ERRORS, START_REQUEST, COMPLETE_REQUEST, SET_CATEGORIES, SET_NEW_POST
 } from './PostActions';
 
 export default (state, action) => {
@@ -14,6 +14,18 @@ export default (state, action) => {
       return {
         ...state,
         post: action.payload,
+        loading: false
+      };
+    case SET_NEW_POST:
+      return {
+        ...state,
+        newPost: action.payload,
+        loading: false
+      };
+    case SET_CATEGORIES:
+      return {
+        ...state,
+        categories: action.payload,
         loading: false
       };
     case SET_ERRORS:

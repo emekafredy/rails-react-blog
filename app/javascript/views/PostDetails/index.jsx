@@ -1,7 +1,9 @@
 import React, { useEffect, useContext } from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 import { PostContext } from '../../context/posts';
+import { AuthContext } from '../../context/auth';
 
 import { Loader } from '../../components/Loader';
 import CommentInput from '../../components/CommentInput';
@@ -9,12 +11,18 @@ import CommentInput from '../../components/CommentInput';
 import './PostDetails.scss';
 
 export const PostDetails = (props) => {
-  const { getPost, post, loading } = useContext(PostContext);
+  const { getPost, post, loading, clearNewPostId } = useContext(PostContext);
+  const { user } = useContext(AuthContext);
 
   const { id } =  props.match.params;
 
-  useEffect(() => {
+  const getPostDetails = () => {
+    clearNewPostId();
     getPost(id);
+  }
+
+  useEffect(() => {
+    getPostDetails();
   }, []);
 
   return (
@@ -29,6 +37,15 @@ export const PostDetails = (props) => {
           </div>
 
           <div className="post-details__body">
+            <div className="post-details__body__post-actions">
+              <div className="post-details__body__post-actions__right">
+                {user?.username === post?.user ?
+                  <Link to={`/posts/${post?.post.id}/edit`}>
+                    <i className="fa fa-edit"></i>
+                  </Link> : ''
+                }
+              </div>
+            </div>
             <img
               className="post-details__body__image"
               src={ `https://res.cloudinary.com/dgbmeqmyf/image/upload/v1607511369/rails-react-blog/${post?.category.toLowerCase()}.jpg` }

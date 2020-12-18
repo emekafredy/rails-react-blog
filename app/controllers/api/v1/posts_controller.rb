@@ -24,9 +24,9 @@ class Api::V1::PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      render json: { message: 'Post created successfully', post: @post, user: @post.user.username }
+      render json: { message: 'Post created successfully', post_id: @post.id }
     else
-      render json: { error: @post.errors.full_messages }
+      render json: { errors: @post.errors.full_messages }, status: :not_acceptable
     end
   end
 
@@ -53,7 +53,7 @@ class Api::V1::PostsController < ApplicationController
   private
 
     def post_params
-      params.permit(:title, :body)
+      params.permit(:title, :body, :category_id)
     end
 
     def set_post

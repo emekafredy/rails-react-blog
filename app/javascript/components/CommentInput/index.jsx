@@ -5,7 +5,7 @@ export default function CommentInput() {
     <div style={{ width: '90%' }}>
       <strong> Add Comment </strong>
       <form action="">
-        <textarea class="textarea" placeholder="Add your comment here" style={{ marginBottom: '1rem' }}></textarea>
+        <textarea className="textarea" placeholder="Add your comment here" style={{ marginBottom: '1rem' }}></textarea>
         <div className="control">
           <button
             className="button is-link"

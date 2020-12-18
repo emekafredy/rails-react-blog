@@ -1,13 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+// components
 import { NavBar } from '../components/NavBar';
+import { Footer } from '../components/Footer';
 
 import { Home } from '../views/Home';
 import { Register } from '../views/Auth/Register';
 import { Login } from '../views/Auth/Login';
 import { PostDetails } from '../views/PostDetails';
-import { Footer } from '../components/Footer/index';
+import { NewPost } from '../views/NewPost';
+import { EditPost } from '../views/EditPost';
 
 export const Routes = () => {
   return (
@@ -18,6 +21,8 @@ export const Routes = () => {
         <Route exact path="/register" component={ Register } />
         <Route exact path="/login" component={ Login } />
         <Route exact path="/posts/:id" component={ PostDetails } />
+        <Route exact path="/post/new" component={ NewPost } />
+        <Route exact path="/posts/:id/edit" component={ EditPost } />
       </Switch>
       <Footer />
     </Router>

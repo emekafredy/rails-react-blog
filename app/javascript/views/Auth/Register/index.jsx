@@ -47,7 +47,7 @@ export const Register = () => {
                   className="input"
                   type="text"
                   placeholder="First Name"
-                  required
+                  // required
                   value={ first_name }
                   onChange={e => setFirstName(e.target.value)}
                 />
@@ -63,7 +63,7 @@ export const Register = () => {
                   className="input"
                   type="text"
                   placeholder="Last Name"
-                  required
+                  // required
                   value={ last_name }
                   onChange={e => setLastName(e.target.value)}
                 />
@@ -79,7 +79,7 @@ export const Register = () => {
                   className="input"
                   type="text"
                   placeholder="username"
-                  required
+                  // required
                   value={ username }
                   onChange={e => setUsername(e.target.value)}
                 />
@@ -95,7 +95,7 @@ export const Register = () => {
                   className="input"
                   type="password"
                   placeholder="password"
-                  required
+                  // required
                   value={ password }
                   onChange={e => setPassword(e.target.value)}
                 />
