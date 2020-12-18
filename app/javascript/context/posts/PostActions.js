@@ -4,6 +4,8 @@ export const SET_POST = "SET_POST";
 export const SET_ERRORS = "SET_ERRORS";
 export const START_REQUEST = "START_REQUEST";
 export const COMPLETE_REQUEST = "COMPLETE_REQUEST";
+export const SET_CATEGORIES = "SET_CATEGORIES";
+export const SET_NEW_POST = "SET_NEW_POST"
 
 // Action creators
 export const setPosts = (posts) => {
@@ -24,4 +26,12 @@ export const startRequest = () => {
 
 export const completeRequest = () => {
   return { type: COMPLETE_REQUEST };
+}
+
+export const setCategories = (categories) => {
+  return { type: SET_CATEGORIES, payload: { categories } };
+}
+
+export const setNewPost = (data) => {
+  return { type: SET_NEW_POST, payload: { data } };
 }

@@ -9,12 +9,17 @@ import CommentInput from '../../components/CommentInput';
 import './PostDetails.scss';
 
 export const PostDetails = (props) => {
-  const { getPost, post, loading } = useContext(PostContext);
+  const { getPost, post, loading, clearNewPostId } = useContext(PostContext);
 
   const { id } =  props.match.params;
 
-  useEffect(() => {
+  const getPostDetails = () => {
+    clearNewPostId();
     getPost(id);
+  }
+
+  useEffect(() => {
+    getPostDetails();
   }, []);
 
   return (

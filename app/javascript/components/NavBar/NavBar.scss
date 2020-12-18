@@ -1,3 +1,5 @@
+@import "../../shared/mixins";
+
 .nav {
   padding: 1.3rem;
   background-color: #3973E0;
@@ -17,25 +19,78 @@
 
   &__right-link {
     border-radius: 3px;
-    padding: 0.6rem 1.2rem;
+    padding: 0.4rem 0.6rem;
     margin-right: 1rem;
 
     &__primary {
       color: #FFF;
       background-color:#00d1b2;
+      border: none;
 
       &:hover {
         color: #FFF;
         background-color:#00c4a7;
+        cursor: pointer;
       }
     }
 
     &__light {
       color: #000;
       background-color:#ebfffc;
+      font-size: 0.7rem;
 
       &:hover {
         background-color:#defffa;
+      }
+    }
+  }
+
+  .opt-dropdown {
+    &__button {
+
+    }
+
+    &__content {
+      display: none;
+      margin-top: 0.1rem;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      left: 50;
+
+      a {
+        float: none;
+        color: black;
+        padding: 0.7rem 1rem;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+
+    &:hover {
+      .opt-dropdown__content {
+        display: block;
+      }
+    }
+  }
+}
+
+// media query
+@include respond-to('medium') {
+  .nav {
+    &__right-link {
+      padding: 0.6rem 1.2rem;
+  
+      &__light {
+        font-size: 1rem;
       }
     }
   }

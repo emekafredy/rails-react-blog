@@ -22,3 +22,7 @@ export const updatePostAPI = (id, postData) => {
 export const deletePostAPI = () => {
   return axios.delete(`${baseUrl}/posts/${id}`);
 }
+
+export const getCategoriesAPI = () => {
+  return axios.get(`${baseUrl}/categories`);
+}
