@@ -10,6 +10,7 @@ import { Register } from '../views/Auth/Register';
 import { Login } from '../views/Auth/Login';
 import { PostDetails } from '../views/PostDetails';
 import { NewPost } from '../views/NewPost';
+import { EditPost } from '../views/EditPost';
 
 export const Routes = () => {
   return (
@@ -21,6 +22,7 @@ export const Routes = () => {
         <Route exact path="/login" component={ Login } />
         <Route exact path="/posts/:id" component={ PostDetails } />
         <Route exact path="/post/new" component={ NewPost } />
+        <Route exact path="/posts/:id/edit" component={ EditPost } />
       </Switch>
       <Footer />
     </Router>

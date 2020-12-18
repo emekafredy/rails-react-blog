@@ -27,6 +27,14 @@
     margin: auto;
     text-align: left;
 
+    &__post-actions {
+      margin-bottom: 1rem;
+
+      &__right {
+        float: right;
+      }
+    }
+
     &__image {
       width: 100%;
     }
